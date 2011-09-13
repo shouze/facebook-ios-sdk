@@ -22,7 +22,7 @@
 // See http://www.facebook.com/developers/createapp.php
 // Also, your application must bind to the fb[app_id]:// URL
 // scheme (substitute [app_id] for your real Facebook app id).
-static NSString* kAppId = nil;
+static NSString* kAppId = @"285647528111912";
 
 @implementation DemoAppViewController
 
@@ -87,6 +87,7 @@ static NSString* kAppId = nil;
  * Show the authorization dialog.
  */
 - (void)login {
+    NSLog(@"login");
   [_facebook authorize:_permissions];
 }
 
@@ -94,6 +95,7 @@ static NSString* kAppId = nil;
  * Invalidate the access token and clear the cookie.
  */
 - (void)logout {
+    NSLog(@"logout");
   [_facebook logout:self];
 }
 
@@ -104,6 +106,7 @@ static NSString* kAppId = nil;
  * Called on a login/logout button click.
  */
 - (IBAction)fbButtonClick:(id)sender {
+    NSLog(@"CLICK");
   if (_fbButton.isLoggedIn) {
     [self logout];
   } else {
